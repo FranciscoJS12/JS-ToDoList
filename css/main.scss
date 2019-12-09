@@ -1,0 +1,137 @@
+// Config
+$listWidth: 800px;
+$primaryColor: rgb(0, 195, 255);
+$lightColor: #e0e0e0;
+$shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+$borderRadius: 15px;
+
+// Reset
+* {
+  scroll-behavior: smooth;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Lato', sans-serif;
+}
+
+ul {list-style: none;}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+// Utilities
+.container {
+  margin: auto;
+  max-width: $listWidth;
+  border-radius: $borderRadius;
+  box-shadow: $shadow;
+}
+
+.visuallyHidden {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: auto;
+  margin: 0;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+  white-space: nowrap;
+}
+
+main {padding: 1.5rem;}
+
+.btn {
+  cursor: pointer;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  display: inline-block;
+
+  &-add {
+    background-color: transparent;
+    border: none;
+    padding: 0.5rem;
+    &:hover {color: $primaryColor;}
+  }
+
+  &-clear {
+    padding: 0.5rem 1rem;
+    margin: 0.5rem auto;
+    align-self: center;
+    &:hover {background-color: #f00;}
+  }
+
+}
+
+.item-done {
+  text-decoration: line-through;
+}
+
+// General Styles
+header.top-section {
+  padding: 1rem;
+  border-bottom: 1px solid $lightColor;
+  h1 {
+    text-align: center;
+  }
+
+  #add-item {
+    display: flex;
+    padding-top: 1rem;
+    align-items: center;
+    
+    #newItem {
+      padding: 0.5rem;
+      flex: 1;
+      border: none;
+      border-bottom: 1px solid #000;
+    }
+  }
+}
+
+// Item List
+.items {
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+
+  .search {
+    padding-right: 40px;
+    margin-bottom: 1.5rem;
+    #search {
+      width: 100%;
+      padding: 0.5rem;
+      border: none;
+      border-bottom: 1px solid #000;
+    }
+  }
+
+  .item {
+    &-list {
+      margin-bottom: 1rem;
+    }
+    &-listed {
+      display: flex;
+      align-items: center;
+      padding: 0.5rem;
+      border: 1px solid $lightColor;
+      margin-top: -1px;
+
+      &:first-child {flex: 1;}
+
+      p {
+        flex: 1;
+      }
+      .done, .delete {
+        padding: 0.5rem;
+        z-index: 1;
+      }
+      .done:hover {color: $primaryColor;}
+      .delete:hover {color: #f00;}
+
+      .material-icons {z-index: 2;}
+    }
+  }
+}

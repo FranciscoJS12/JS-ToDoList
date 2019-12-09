@@ -1,0 +1,171 @@
+* {
+  scroll-behavior: smooth;
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-family: 'Lato', sans-serif;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.container {
+  margin: auto;
+  max-width: 800px;
+  border-radius: 15px;
+  -webkit-box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+          box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+}
+
+.visuallyHidden {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: auto;
+  margin: 0;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+  white-space: nowrap;
+}
+
+main {
+  padding: 1.5rem;
+}
+
+.btn {
+  cursor: pointer;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  display: inline-block;
+}
+
+.btn-add {
+  background-color: transparent;
+  border: none;
+  padding: 0.5rem;
+}
+
+.btn-add:hover {
+  color: #00c3ff;
+}
+
+.btn-clear {
+  padding: 0.5rem 1rem;
+  margin: 0.5rem auto;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+}
+
+.btn-clear:hover {
+  background-color: #f00;
+}
+
+.item-done {
+  text-decoration: line-through;
+}
+
+header.top-section {
+  padding: 1rem;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+header.top-section h1 {
+  text-align: center;
+}
+
+header.top-section #add-item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding-top: 1rem;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+header.top-section #add-item #newItem {
+  padding: 0.5rem;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  border: none;
+  border-bottom: 1px solid #000;
+}
+
+.items {
+  padding: 1rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.items .search {
+  padding-right: 40px;
+  margin-bottom: 1.5rem;
+}
+
+.items .search #search {
+  width: 100%;
+  padding: 0.5rem;
+  border: none;
+  border-bottom: 1px solid #000;
+}
+
+.items .item-list {
+  margin-bottom: 1rem;
+}
+
+.items .item-listed {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 0.5rem;
+  border: 1px solid #e0e0e0;
+  margin-top: -1px;
+}
+
+.items .item-listed:first-child {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+}
+
+.items .item-listed p {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+}
+
+.items .item-listed .done, .items .item-listed .delete {
+  padding: 0.5rem;
+  z-index: 1;
+}
+
+.items .item-listed .done:hover {
+  color: #00c3ff;
+}
+
+.items .item-listed .delete:hover {
+  color: #f00;
+}
+
+.items .item-listed .material-icons {
+  z-index: 2;
+}
+/*# sourceMappingURL=main.css.map */

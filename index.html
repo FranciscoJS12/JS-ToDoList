@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link href="https://fonts.googleapis.com/css?family=Lato:400,700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="./css/main.css">
+  <title>To Do App</title>
+  <meta name="description" content="Simple To Do List JS practice.">
+</head>
+<body>
+  <main>
+    <div class="container">
+      <header class="top-section">
+        <h1 id="title">My To Do App</h1>
+        <form id="add-item">
+          <input type="text" name="newItem" id="newItem" placeholder="New item">
+          <label for="newItem" class="visuallyHidden">New Item</label>
+          <button type="submit" class="btn btn-add"><i class="material-icons">add</i></button>
+        </form>
+      </header>
+      <div class="items">
+        <div class="search">
+          <input type="text" name="search" id="search" placeholder="Type To Search">
+          <label for="search" class="visuallyHidden">Search</label>
+        </div>
+        <ul class="item-list">
+          <!-- <li class="item-listed item-done">
+            <p class="">List item</p>
+            <span class="controls"><a href="#" class="done"><i class="material-icons">done</i></a><a href="#" class="delete"><i class="material-icons">clear</i></a></span>
+          </li> -->
+        </ul>
+        <a href="#" class="btn btn-clear">Delete All</a>
+      </div>
+    </div>
+  </main>
+  <script src="app.js"></script>
+</body>
+</html>
