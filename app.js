@@ -6,7 +6,6 @@ const itemList = document.querySelector('.item-list');
 const deleteAllBtn = document.querySelector('.btn-clear');
 
 // Load all Event Listeners
-window.onload = loadEventListeners; // Why is this necessary?
 function loadEventListeners() {
   // Add item event
   form.addEventListener('submit', addItem);
@@ -17,10 +16,13 @@ function loadEventListeners() {
   // Search event
   search.addEventListener('keyup', searchList);
 }
+loadEventListeners();
 
 
 // Add Item to list
 function addItem(e){
+  e.preventDefault();
+
   if(itemInput.value === ''){
     alert('Please write something first.');
     return;
@@ -52,8 +54,6 @@ function addItem(e){
 
   // Clear input
   itemInput.value = '';
-
-  e.preventDefault();
 }
 
 // Remove Item
