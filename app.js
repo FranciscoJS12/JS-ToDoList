@@ -33,12 +33,12 @@ function getItems() {
     // Create li element
     const li = document.createElement('li');
     // Add class to li element
-    li.className = 'item-listed';
+    li.className = item[1] //'item-listed';
 
     // Create p element
     const itemText = document.createElement('p');
     // Add text to p element
-    itemText.appendChild(document.createTextNode(item));
+    itemText.appendChild(document.createTextNode(item[0]));
     // Append p element to li
     li.appendChild(itemText);
 
@@ -106,7 +106,7 @@ function storeItemInLocalStorage(newItem) {
     allItems = JSON.parse(localStorage.getItem('allItems'));
   }
 
-  allItems.push(newItem);
+  allItems.push([newItem, 'item-listed']);
 
   localStorage.setItem('allItems', JSON.stringify(allItems));
 }
@@ -117,13 +117,15 @@ function controlItem(e) {
     if(confirm('Are you sure?')) {
       e.target.parentElement.parentElement.parentElement.remove();
 
-      // Remove from Local Storage
+      // Remove Item from Local Storage
       removeItemFromLocalStorage(e.target.parentElement.parentElement.parentElement);
     }
   } else if(e.target.parentElement.classList.contains('done') && e.target.parentElement.parentElement.parentElement.className === 'item-listed') {
     e.target.parentElement.parentElement.parentElement.className = 'item-listed item-done';
+    updateItemClassFromLocalStorage(e.target.parentElement.parentElement.parentElement.firstChild.textContent, 'item-listed item-done')
   } else if (e.target.parentElement.classList.contains('done') && e.target.parentElement.parentElement.parentElement.className === 'item-listed item-done') {
     e.target.parentElement.parentElement.parentElement.className = 'item-listed';
+    updateItemClassFromLocalStorage(e.target.parentElement.parentElement.parentElement.firstChild.textContent, 'item-listed')
   }
 }
 
@@ -136,14 +138,26 @@ function removeItemFromLocalStorage(listedItem) {
     allItems = JSON.parse(localStorage.getItem('allItems'));
   }
 
+  // Grab only the p element inside the li
   const listedItemP = listedItem.firstChild.textContent;
 
   allItems.forEach(function(item, index) {
-    if(listedItemP === item) {
+    if(listedItemP === item[0]) {
       allItems.splice(index, 1);
     }
   });
 
+  localStorage.setItem('allItems', JSON.stringify(allItems));
+}
+
+// Update class from item on local storage
+function updateItemClassFromLocalStorage(pValue, cssClass){
+  let allItems = JSON.parse(localStorage.getItem('allItems'));
+  allItems.forEach(function(item, index) {
+    if(pValue === item[0]) {
+      item[1] = cssClass;
+    }
+  });
   localStorage.setItem('allItems', JSON.stringify(allItems));
 }
 

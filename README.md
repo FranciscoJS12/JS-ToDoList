@@ -5,3 +5,4 @@ Main differences:
 * My own minimal UI.
 * Checked item feature.
 * Confirm prompt for deleting all items.
+* Save class from items to local storage (this enables persisting checked item state).
