@@ -41,7 +41,10 @@ a {
   white-space: nowrap;
 }
 
-main {padding: 1.5rem;}
+main {
+  padding: 1.5rem;
+  margin-top: 40px;
+}
 
 .btn {
   cursor: pointer;
